@@ -8,25 +8,22 @@ app.use(bodyParser.json())
 
 var PORT = 3000;
 
-var array = ["beatriz", 34, "ponce"];
+
 
 //route handler
-app.get("/survery", function (req, res) {
+app.get("/", function (req, res) {
 
-res.send('bea');
-
-})
-
-
-
-app.post("/insert", function (req, res) {
-
-array.push(req.body) 
-
-res.send('success');
+	res.send(home.html);
 
 })
 
+
+
+app.post("/survey", function (req, res) {
+
+	res.send(survey.html);
+
+})
 
 app.listen(PORT, function() {
 
