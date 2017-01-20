@@ -2,30 +2,23 @@ var express = require('express');
 
 var bodyParser= require('body-parser');
 
-var app = express();
-
-app.use(bodyParser.json())
-
-var PORT = 3000;
-
+var path= require("path");
 
 
 //route handler
-app.get("/", function (req, res) {
 
-	res.sendFile(path.join(__dirname, '../public/home.html'));
+module.exports = function(app){
 
-})
+	app.get("/", function (req, res) {
+
+		res.sendFile(path.join(__dirname, '/../public/home.html'));
+
+});
 
 
 
 app.post("/survey", function (req, res) {
 
-	res.sendFile(path.join(__dirname, '../public/survey.html'));
+	res.sendFile(path.join(__dirname, '/../public/survey.html'));
 
-})
-
-app.listen(PORT, function() {
-
-	console.log("App listening");
 });
