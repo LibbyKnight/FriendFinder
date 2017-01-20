@@ -227,8 +227,26 @@
 	    }
 	    	});
 
-
+    $("#submit").on("click", function() {
+      var searchedCharacter = $("#character-search").val().trim();
+      searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+      $.get("/api/" + searchedCharacter, function(data) {
+        console.log(data);
+        if (data) {
+          $("#info").show();
+          $("#name").text(data.name);
+          $("#phone").text(data.phone);
+          $("#email").text(data.email);
+          $("#uniqueid").text(data.uniqueid);
+        }
+        else {
+          $("#name").text("The force is not strong with this one. Your character was not found.");
+          $("#info").hide();
+        }
+      });
+    });
   </script>
+
 
   </body>
 
