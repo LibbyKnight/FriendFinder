@@ -110,8 +110,7 @@ var friends = [
       "2",
       "2"
     ]
-  }
+   }
   ]
 
-
-  module.exports = friends;
+module.exports = friends;
