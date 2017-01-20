@@ -13,7 +13,7 @@ var PORT = 3000;
 //route handler
 app.get("/", function (req, res) {
 
-	res.sendFile(path.join(__dirname, '/public/home.html'));
+	res.sendFile(path.join(__dirname, '../public/home.html'));
 
 })
 
@@ -21,7 +21,7 @@ app.get("/", function (req, res) {
 
 app.post("/survey", function (req, res) {
 
-	res.sendFile(path.join(__dirname, '/public/survey.html'));
+	res.sendFile(path.join(__dirname, '../public/survey.html'));
 
 })
 
