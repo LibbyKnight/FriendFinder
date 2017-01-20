@@ -1,0 +1,1 @@
+var friend = require('../data/friends.js');
