@@ -214,39 +214,20 @@
 	    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
 	    	
 				}
-
+				console.log(userData);
 				var currentURL = window.location.origin;
 	    	 
 	    	$.post(currentURL + "/api/friends", userData, function(data){
 
-					$("#matchName").text(data.name);
+				$("#matchName").text(data.name);
 	    		$('#matchImg').attr("src", data.photo);
-		    	// Show the modal with the best match 
 		    	$("#resultsModal").modal('toggle');
 			})
 	    }
-	    	});
+	});
 
-    $("#submit").on("click", function() {
-      var searchedCharacter = $("#character-search").val().trim();
-      searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
-      $.get("/api/" + searchedCharacter, function(data) {
-        console.log(data);
-        if (data) {
-          $("#info").show();
-          $("#name").text(data.name);
-          $("#phone").text(data.phone);
-          $("#email").text(data.email);
-          $("#uniqueid").text(data.uniqueid);
-        }
-        else {
-          $("#name").text("The force is not strong with this one. Your character was not found.");
-          $("#info").hide();
-        }
-      });
-    });
+
   </script>
-
 
   </body>
 

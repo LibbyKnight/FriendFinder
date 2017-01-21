@@ -44,6 +44,8 @@ app.post('/api/new', function(req, res) {
 
    console.log(userData);
 
+   console.log(Data);
+
    res.json(Data);
 })
 
